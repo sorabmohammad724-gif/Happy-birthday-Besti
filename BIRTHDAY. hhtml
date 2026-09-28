@@ -1,1 +1,204 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday NORENAA JAAN 🎂</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Trebuchet MS", sans-serif;
+    background: linear-gradient(135deg, #12001f, #4b005c, #ff4f9a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: min(92%, 650px);
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(255,105,180,.35);
+    border: 1px solid rgba(255,255,255,.2);
+    z-index: 5;
+}
+
+.small {
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(38px, 9vw, 72px);
+    color: #fff;
+    text-shadow:
+        0 0 10px #ff8bd1,
+        0 0 25px #ff2f9d,
+        0 0 45px #ff2f9d;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { transform: scale(1); }
+    to { transform: scale(1.04); }
+}
+
+.message {
+    margin: 22px auto;
+    max-width: 500px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.cake {
+    font-size: 85px;
+    margin: 15px 0;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+button {
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    background: white;
+    color: #d40072;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,255,255,.5);
+}
+
+button:hover {
+    transform: scale(1.06);
+}
+
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    font-size: 65px;
+    animation: float 9s linear infinite;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-5deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(-120vh) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+.balloon:nth-child(1) { left: 5%; animation-delay: 0s; }
+.balloon:nth-child(2) { left: 20%; animation-delay: 2s; }
+.balloon:nth-child(3) { left: 75%; animation-delay: 1s; }
+.balloon:nth-child(4) { left: 90%; animation-delay: 3s; }
+.balloon:nth-child(5) { left: 45%; animation-delay: 4s; }
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 15px;
+    top: -20px;
+    animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+#surprise {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ffd6ef;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+
+<div class="container">
+    <div class="small">✨ A SPECIAL DAY ✨</div>
+
+    <h1>Happy Birthday<br>NORENAA JAAN 🎂</h1>
+
+    <div class="cake">🎂</div>
+
+    <p class="message">
+        Wishing you a day filled with happiness, smiles,
+        beautiful memories and lots of wonderful surprises. 💖
+        <br><br>
+        May your special day be as amazing as you are! ✨
+    </p>
+
+    <button onclick="surprise()">🎁 Open Your Surprise</button>
+
+    <div id="surprise">
+        💖 Once again... HAPPY BIRTHDAY NORENAA JAAN! 💖
+        <br><br>
+        🎉 Keep smiling & enjoy your special day! 🎉
+    </div>
+</div>
+
+<script>
+function surprise() {
+    document.getElementById("surprise").style.display = "block";
+
+    for (let i = 0; i < 80; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti";
+
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.animationDelay = Math.random() * 2 + "s";
+        piece.style.background =
+            ["#ff4f9a", "#ffd166", "#06d6a0", "#4cc9f0", "#ffffff"]
+            [Math.floor(Math.random() * 5)];
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => piece.remove(), 5000);
+    }
+}
+</script>
+
+</body>
+</html>
+    
